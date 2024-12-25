@@ -38,7 +38,7 @@ export default function Header() {
         <Image fill alt="Logo" src="/logo.png" />
         </div>
         <h1 className={cn("text-xl md:text-3xl font-bold text-black", font.className)}>
-          Nagrik AI
+          Nagrik
         </h1>
       </Link>
       <div className="hidden md:flex items-center space-x-1">
