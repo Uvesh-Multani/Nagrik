@@ -7,7 +7,6 @@ import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { LanguageSelector } from "@/components/language-selector"
 import { Button } from "@/components/ui/button"
 
 const font = Montserrat({
@@ -34,7 +33,7 @@ export default function Header() {
     <header className="bg-white shadow-sm">
       <nav className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex items-center md:px-14">
         <div className="relative h-12 w-12 mr-4">
         <Image fill alt="Logo" src="/logo.png" />
         </div>
@@ -58,7 +57,7 @@ export default function Header() {
             ))}
           </div>
           <div className="flex items-center space-x-4">
-            <LanguageSelector />
+           
             <Button
               variant="ghost"
               className="md:hidden"

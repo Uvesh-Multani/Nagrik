@@ -43,7 +43,7 @@ export default function Footer() {
                 <span className="sr-only">Instagram</span>
                 <Instagram className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-600 hover:text-primary">
+              <a href="https://www.linkedin.com/company/nagrik-ai/" className="text-gray-600 hover:text-primary">
                 <span className="sr-only">LinkedIn</span>
                 <Linkedin className="h-6 w-6" />
               </a>
@@ -51,11 +51,10 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-8 border-t pt-8 text-center">
-          <p className="text-sm text-gray-600">&copy; 2023 Nagrik Platform. All rights reserved.</p>
+          <p className="text-sm text-gray-600">&copy; 2023 <Link href="/" className='hover:text-primary'>Nagrik.</Link> All rights reserved.</p>
           <div className="mt-2 space-x-4">
             <Link href="/privacy-policy" className="text-sm text-gray-600 hover:text-primary">Privacy Policy</Link>
-            <Link href="/terms-of-service" className="text-sm text-gray-600 hover:text-primary">Terms of Service</Link>
-            <Link href="/accessibility" className="text-sm text-gray-600 hover:text-primary">Accessibility</Link>
+            <Link href="/terms" className="text-sm text-gray-600 hover:text-primary">Terms & Conditions</Link>
           </div>
         </div>
       </div>
