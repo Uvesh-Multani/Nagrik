@@ -1,4 +1,4 @@
-import { Link } from "next/link";
+import { Link } from "lucide-react";
 
 const Term: React.FC = () => {
   return (
