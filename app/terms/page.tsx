@@ -1,3 +1,4 @@
+import { Link } from "next/link";
 
 const Term: React.FC = () => {
   return (
@@ -786,7 +787,7 @@ const Term: React.FC = () => {
             </h2>
             <p className="text-lg leading-relaxed">
               We care about data privacy and security. Please review our Privacy
-              Policy: <a href="/" className="text-blue-700 hover:text-blue-800">https://www.nagrikai.in</a> . By using the
+              Policy: <Link href="/" className="text-blue-700 hover:text-blue-800">https://www.nagrikai.in</Link> . By using the
               Services, you agree to be bound by our Privacy Policy, which is
               incorporated into these Legal Terms. Please be advised the
               Services are hosted in India . If you access the Services from any
