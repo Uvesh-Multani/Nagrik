@@ -172,7 +172,7 @@ const About = () => {
               <div className="flex flex-col items-center mt-8">
                 <Image 
                   className="rounded-full h-28 w-28 shadow-lg" 
-                  src="/2.png" 
+                  src="/1.png" 
                   alt="Arsh Memon" 
                   width={112}  
                   height={112} 
