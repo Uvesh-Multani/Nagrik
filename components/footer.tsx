@@ -16,7 +16,7 @@ export default function Footer() {
               <li><Link href="/rights-and-laws" className="text-sm text-gray-600 hover:text-primary">Rights & Laws</Link></li>
               <li><Link href="/relief-schemes" className="text-sm text-gray-600 hover:text-primary">Relief Schemes</Link></li>
               <li><Link href="/feedback" className="text-sm text-gray-600 hover:text-primary">Feedback</Link></li>
-              <li><Link href="/https://nagrik-ai.vercel.app" target='_blank' className="text-sm text-gray-600 hover:text-primary">Chat</Link></li>
+              <li><Link href="https://nagrik-ai.vercel.app" target='_blank' className="text-sm text-gray-600 hover:text-primary">Chat</Link></li>
 
               <li><Link href="/faq" className="text-sm text-gray-600 hover:text-primary">FAQ</Link></li>
               <li><Link href="/about" className="text-sm text-gray-600 hover:text-primary">About Us</Link></li>
