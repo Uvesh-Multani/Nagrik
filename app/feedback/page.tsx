@@ -10,11 +10,44 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 
 export default function Feedback() {
   const [submitted, setSubmitted] = useState(false)
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [comments, setComments] = useState('')
+  const [satisfaction, setSatisfaction] = useState('neutral')
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault()
-    // Here you would typically send the form data to your backend
-    setSubmitted(true)
+
+    // Prepare the form data
+    const formData = {
+      access_key: "fd0c66e5-b9d3-4d12-a24e-6e54ec7fd249", // Replace with your Web3Forms API key
+      name: name,
+      email: email,
+      satisfaction: satisfaction,
+      message: comments,
+    }
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const result = await response.json()
+
+      if (result.success) {
+        setSubmitted(true) // Show thank you message
+      } else {
+        // Handle errors (optional)
+        console.error('Error submitting feedback:', result);
+      }
+    } catch (error) {
+      console.error('Network error:', error)
+    }
   }
 
   if (submitted) {
@@ -42,15 +75,30 @@ export default function Feedback() {
           <CardContent className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="name">Name</Label>
-              <Input id="name" required />
+              <Input 
+                id="name" 
+                value={name} 
+                onChange={(e) => setName(e.target.value)} 
+                required 
+              />
             </div>
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
-              <Input id="email" type="email" required />
+              <Input 
+                id="email" 
+                type="email" 
+                value={email} 
+                onChange={(e) => setEmail(e.target.value)} 
+                required 
+              />
             </div>
             <div className="space-y-2">
               <Label>How satisfied are you with Nagrik?</Label>
-              <RadioGroup defaultValue="neutral">
+              <RadioGroup 
+                value={satisfaction} 
+                onValueChange={setSatisfaction} 
+                defaultValue="neutral"
+              >
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="very-satisfied" id="very-satisfied" />
                   <Label htmlFor="very-satisfied">Very Satisfied</Label>
@@ -75,7 +123,11 @@ export default function Feedback() {
             </div>
             <div className="space-y-2">
               <Label htmlFor="comments">Additional Comments</Label>
-              <Textarea id="comments" />
+              <Textarea 
+                id="comments" 
+                value={comments} 
+                onChange={(e) => setComments(e.target.value)} 
+              />
             </div>
           </CardContent>
           <CardFooter>
@@ -86,4 +138,3 @@ export default function Feedback() {
     </div>
   )
 }
-
